@@ -3,12 +3,12 @@
  * poj1236,poj3177,poj3164
  */
 
-int dfn[maxn],low[maxn],scc[maxn], stk[maxn],index=0,sccnum=0,top=0;\
+int dfn[maxn],low[maxn],scc[maxn], stack[maxn],index=0,sccnum=0,top=0;\
 
 void tarjan(int root){
     if(dfn(root)) return ;
     dfn[root] = low[root]= ++index;
-    stk[++top] = root;
+    stack[++top] = root;
     for (int i = head[root]; ~i ; i=e[i].ne) {
         int v = e[i].to;
         if(!dfn[v]){
@@ -21,11 +21,11 @@ void tarjan(int root){
 
     if(low[root]==dfn[root]){
         sccnum++;
-        for (;;){
-            int x = stk[top--];
+        int x;
+        do{
+            x = stack[top--];
             scc[x]= sccnum;
-            if(x == root) break;
-        }
+        }while (x==root);
     }
 }
 
