@@ -3,7 +3,7 @@
  * poj1236,poj3177,poj3164
  */
 
-int dfn[maxn],low[maxn],scc[maxn], stack[maxn],index=0,sccnum=0,top=0;\
+int dfn[maxn],low[maxn],scc[maxn], stack[maxn],index=0,sccnum=0,top=0;
 
 void tarjan(int root){
     if(dfn(root)) return ;
