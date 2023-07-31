@@ -1,0 +1,7 @@
+# Project exclude paths
+/cmake-build-debug/
+.idea
+CMakeLists.txt
+main.cpp
+.gitngnore
+.github
